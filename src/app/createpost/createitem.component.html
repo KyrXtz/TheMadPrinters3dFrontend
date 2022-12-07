@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        <form [formGroup]="itemForm" (ngSubmit)="create()">
+          <div class="form-group">
+            <label>Image URL</label>
+            <input type="text" class="form-control" formControlName="ImageUrl">
+          </div>
+          <div *ngIf="imageUrl?.touched && imageUrl?.errors?.['required']" class="alert alert-danger">
+            This field is required!
+          </div>
+          <div class="mb-3">
+            <label>Description</label>
+            <textarea class="form-control" rows="3" formControlName="Description"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Create</button>
+      </form>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>

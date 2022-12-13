@@ -17,11 +17,18 @@ export class ListItemsComponent implements OnInit {
     this.fetchItems();
   }
 
-  fetchItems(){
-    this.itemService.getItems().subscribe( items => {
-      this.items = items;
+
+  fetchItems() {
+    this.itemService.getItems().subscribe(response => {
+      this.items = response.items.map(item => {
+        return {
+          id : item.id,
+          imageUrl : item.imageUrl,
+          title : item.title
+        };
+      });
       console.log(this.items);
-    })
+    });
   }
   routeToItem(id: number): void {
     this.router.navigate(["items",id]);

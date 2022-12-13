@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateItemComponent } from './createpost/createitem.component';
+import { CreateItemComponent } from './createitem/createitem.component';
 import { DetailsItemsComponent as DetailsItemComponent } from './details-items/details-items.component';
 import { EditItemComponent } from './edit-item/edit-item.component';
 import { ListItemsComponent } from './list-items/list-items.component';

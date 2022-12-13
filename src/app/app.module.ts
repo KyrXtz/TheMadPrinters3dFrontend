@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { CreateItemComponent } from './createpost/createitem.component'
+import { CreateItemComponent } from './createitem/createitem.component'
 import { ItemService } from './services/item.service';
 import { AuthGuardService } from './services/auth.guard.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';

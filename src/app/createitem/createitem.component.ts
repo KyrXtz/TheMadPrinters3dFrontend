@@ -4,9 +4,9 @@ import { ToastrService } from 'ngx-toastr';
 import { ItemService } from '../services/item.service';
 
 @Component({
-  selector: 'app-createpost',
-  templateUrl: './createpost.component.html',
-  styleUrls: ['./createpost.component.css']
+  selector: 'app-createitem',
+  templateUrl: './createitem.component.html',
+  styleUrls: ['./createitem.component.css']
 })
 export class CreateItemComponent {
   itemForm : FormGroup
@@ -14,6 +14,7 @@ export class CreateItemComponent {
      private itemService: ItemService,
      private toastrService:ToastrService) { 
     this.itemForm = this.fb.group({
+      'Title' : ['',Validators.required],
       'ImageUrl' : ['',Validators.required],
       'Description': ['']
     })
@@ -24,6 +25,9 @@ export class CreateItemComponent {
 
   get imageUrl(){
     return this.itemForm.get('ImageUrl');
+  }
+  get title(){
+    return this.itemForm.get('Title');
   }
 
   create(){

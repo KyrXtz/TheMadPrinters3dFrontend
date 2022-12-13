@@ -16,8 +16,8 @@ export class ItemService {
     return this.http.post<Item>(this.itemPath, data);
   }
 
-  getItems(): Observable<Array<Item>>{
-    return this.http.get<Array<Item>>(this.itemPath);
+  getItems(): Observable<{items: Array<Item>}>{
+    return this.http.get<{items: Array<Item>}>(this.itemPath);
   }
 
   getItem(id: number): Observable<Item>{
@@ -25,10 +25,10 @@ export class ItemService {
   }
 
   deleteItem(id: number): Observable<boolean>{//returns null, must change to 200OK
-    return this.http.delete<boolean>(this.itemPath+ '/' +id);    
+    return this.http.delete<boolean>(this.itemPath + '/' + id, { body: {} });
   }
 
   editItem(data: Item): Observable<boolean>{ //returns null, must change to 200OK
-    return this.http.put<boolean>(this.itemPath,data);  
+    return this.http.put<boolean>(this.itemPath+ '/' +data.id,data);  
   }
 }

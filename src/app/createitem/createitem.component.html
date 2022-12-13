@@ -4,6 +4,13 @@
       <div class="col-lg-4">
         <form [formGroup]="itemForm" (ngSubmit)="create()">
           <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" formControlName="Title">
+          </div>
+          <div *ngIf="title?.touched && title?.errors?.['required']" class="alert alert-danger">
+            This field is required!
+          </div>
+          <div class="form-group">
             <label>Image URL</label>
             <input type="text" class="form-control" formControlName="ImageUrl">
           </div>
